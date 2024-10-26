@@ -8,8 +8,11 @@ class ContaCorrente extends Conta
         parent::__construct($agencia,$conta, $saldo);
         $this->limite = $limite;
     }
-
-    public function retirar($quantia)
+/**
+ * Essa classe está como final para que não seja mais possível
+ * redefinir em classes filhas
+ */
+    public final function retirar($quantia)
     {
         if (($this->saldo + $this->limite) >= $quantia) 
         {
